@@ -1,0 +1,14 @@
+{
+  "name": "blizzard",
+  "version": "1.0.0",
+  "description": "Project developed for Codeboost course",
+  "main": "index.js",
+  "repository": "https://github.com/cindyhanae/blizzard-project.git",
+  "author": "Cindy Hanae",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.9"
+  }
+}
