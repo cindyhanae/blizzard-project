@@ -2,6 +2,7 @@ const gulp = require("gulp")
 
 const sass = require("gulp-sass")(require("sass"))
 const autoprefixer = require("gulp-autoprefixer")
+const browserSync = require("browser-sync").create()
 
 function compileSass(){
   return gulp.src("scss/*.scss")
@@ -11,13 +12,26 @@ function compileSass(){
     cascade: false
   }))
   .pipe(gulp.dest("css/"))
+  .pipe(browserSync.stream())
 }
 
-// task list
 gulp.task("sass", compileSass)
 
-function watch(){
-  gulp.watch("scss/*.scss", compileSass)
+function browser(){
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  })
 }
 
-gulp.task("default", watch)
+gulp.task("browser-sync", browser)
+
+function watch(){
+  gulp.watch("scss/*.scss", gulp.series('sass'))
+  gulp.watch("*.html").on("change", browserSync.reload)
+}
+
+gulp.task('watch', watch)
+
+gulp.task("default", gulp.parallel("watch", "browser-sync"))
