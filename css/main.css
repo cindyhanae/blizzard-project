@@ -1,1 +1,1 @@
-header{position:fixed}body{background-color:pink;-webkit-box-shadow:4px 4px 4px 4px #000;box-shadow:4px 4px 4px 4px #000}
+*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box;text-decoration:none;list-style:none;font-family:"Poppins",sans-serif}body,html{width:100%;height:100%;font-size:62.5%}img{max-width:100%;display:block;height:auto}button{cursor:pointer}.container{width:100%;max-width:1330px;padding:0 15px;margin:0 auto}
