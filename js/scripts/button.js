@@ -1,3 +1,3 @@
 {
-  console.log('buttons teste')
+  const number = 32
 }

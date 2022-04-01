@@ -4,6 +4,7 @@ const sass = require("gulp-sass")(require("sass"))
 const autoprefixer = require("gulp-autoprefixer")
 const browserSync = require("browser-sync").create()
 const concat = require("gulp-concat")
+const babel = require('gulp-babel')
 
 function compileSass(){
   return gulp.src("scss/*.scss")
@@ -17,14 +18,34 @@ function compileSass(){
 }
 gulp.task("sass", compileSass)
 
+function pluginsCss(){
+  return gulp.src('css/lib/*.css')
+  .pipe(concat('plugins.css'))
+  .pipe(gulp.dest('css/'))
+  .pipe(browserSync.stream())
+}
+
+gulp.task('plugincss', pluginsCss)
+
 
 function gulpJs(){
   return gulp.src("js/scripts/*.js")
   .pipe(concat("all.js"))
+  .pipe(babel({
+    presets: ['@babel/env']
+  }))
   .pipe(gulp.dest("js/"))
 }
 gulp.task("alljs", gulpJs)
 
+function pluginsJs(){
+  return gulp
+  .src(['./js/lib/aos.min.js', './js/lib/swiper.min.js'])
+  .pipe(concat('plugins.js'))
+  .pipe(gulp.dest('js/'))
+  .pipe(browserSync.stream())
+}
+gulp.task("pluginjs", pluginsJs)
 
 function browser(){
   browserSync.init({
@@ -37,11 +58,13 @@ gulp.task("browser-sync", browser)
 
 
 function watch(){
-  gulp.watch("scss/*.scss", gulp.series('sass'))
+  gulp.watch("scss/*.scss", compileSass)
+  gulp.watch("css/lib/*.css", pluginsCss)
   gulp.watch("*.html").on("change", browserSync.reload)
   gulp.watch("js/scripts/*.js", gulpJs)
+  gulp.watch('js/lib/*.js', pluginsJs)
 }
 
 gulp.task('watch', watch)
 
-gulp.task("default", gulp.parallel("watch", "browser-sync", "sass", "alljs"))
+gulp.task("default", gulp.parallel("watch", "browser-sync", "sass", "plugincss", "alljs", "pluginjs"))
