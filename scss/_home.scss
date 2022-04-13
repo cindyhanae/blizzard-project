@@ -1,3 +1,4 @@
+// ********** HERO *********
 .s-hero{
   position: relative;
   .slider-hero{
@@ -171,3 +172,58 @@
   }
 }
 
+// ******* GAMES SECTION *************
+.s-games{
+  margin-top: 8.5rem;
+}
+
+.s-games_top{
+  display: flex;
+  align-items: flex-end;
+  p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #8F9199;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin-right: 17.1rem;
+  }
+}
+
+.s-games_top_info{
+  display: flex;
+  gap: 15.9rem;
+  margin-right: 44.7rem;
+  align-items: flex-end;
+  h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 110.2%;
+    width: 100%;
+    max-width: 17.5rem;
+  }
+
+  ul{
+    display: flex;
+    gap: 2.4rem;
+    width: 100%;
+    max-width: 16rem;
+  }
+}
+
+.s-games_top_allgames{
+  a{
+    display: flex;
+    gap: 1rem;
+
+    span{
+      color: $primary-default;
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 2.4rem;
+      display: inline-block;
+      width: 100%;
+      max-width: 12.6rem;
+    }
+  }
+}
