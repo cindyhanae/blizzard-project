@@ -15,3 +15,26 @@ var slideHero = new Swiper(".slider-hero", {
     disableOnInteraction: false
   }
 });
+
+
+// ======= GAMES =======
+const allGamesFilter = document.querySelectorAll('.js-nav-games li a')
+const tabPane = document.querySelectorAll( '.tab-pane-games')
+
+allGamesFilter.forEach((filter, index) => {
+  
+  filter.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    allGamesFilter.forEach(item => {
+      item.classList.remove('active')
+    })
+
+    tabPane.forEach(item => {
+      item.classList.remove('active')
+    })
+
+    filter.classList.add('active')
+    tabPane[index].classList.add('active')
+  })
+})

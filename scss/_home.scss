@@ -216,6 +216,20 @@
     gap: 2.4rem;
     width: 100%;
     max-width: 16rem;
+
+    li{
+      a{
+        img{
+          opacity: 0.5;
+          transition: opacity .3s;
+        }
+        &.active{
+          img{
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
   .btn-all-games{
     display: flex;
@@ -228,7 +242,6 @@
 }
 
 .s-games_bottom{
-  border: 1px solid red;
   margin-top: 7.8rem;
   .tab-pane-games{
     display: none;
@@ -237,6 +250,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 4.7rem 3.2rem;
+      animation: fadeUp .4s forwards;
     }
   }
 }
@@ -253,5 +267,18 @@
     display: flex;
     gap: 1.4rem;
     margin-top: 3.6rem;
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+
   }
 }
