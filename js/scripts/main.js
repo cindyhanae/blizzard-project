@@ -38,3 +38,17 @@ allGamesFilter.forEach((filter, index) => {
     tabPane[index].classList.add('active')
   })
 })
+
+
+// ========= MODAL ==========
+const btnShowModal = document.querySelector('.js-show-modal')
+const closeModal = document.querySelector('.js-close')
+
+btnShowModal.addEventListener('click', (event) => {
+  event.preventDefault()
+  document.documentElement.classList.add('show-modal')
+})
+
+closeModal.addEventListener('click', () => {
+  document.documentElement.classList.remove('show-modal')
+})

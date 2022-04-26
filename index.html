@@ -54,7 +54,7 @@
       <div class="header-right">
         <div class="header-btns">
           <a href="" class="btn btn-outline">Criar conta</a>
-          <a href="" class="btn btn-primary">
+          <a href="" class="btn btn-primary js-show-modal">
             <img src="./assets/icon-login.svg" alt="Ícone de login" title="Ícone de login">
             Login
           </a>
@@ -496,6 +496,84 @@
             </span>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD SECTION -->
+  <section class="s-download">
+    <div class="container">
+      <div class="s-download_txt">
+        <img src="./assets/battlenet-logo.svg" alt="Battle.net logo" title="Batttle.net logo">
+        <h3>Baixe agora o battle.net</h3>
+        <div class="battlenet-info">
+          <ul>
+            <li>
+              <img src="./assets/icon-seus-jogos.svg" alt="Ícone seus jogos em um só lugar">
+              <span>Seus jogos em um só lugar</span>
+            </li>
+            <li>
+              <img src="./assets/icon-conect.svg" alt="Ícone conecte-se aos seus amigos">
+              <span>Conecte-se aos seus amigos</span>
+            </li>
+            <li>
+              <img src="./assets/icon-buy.svg" alt="Ícone compre jogos">
+              <span>Compre jogos e itens digitais</span>
+            </li>
+          </ul>
+
+          <button class="btn btn-primary btn-download">
+            <img src="./assets/icon-apple.svg" alt="Logo Apple">
+            Baixar para o MacOS
+          </button>
+
+          <div class="download-mobile">
+            <img src="./assets/icon-phone.svg" alt="Ícone celular">
+            <span>Também disponível como <a href="#">aplicativo móvel</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="s-download_img">
+        <img src="./assets/image-download-lg.png" alt="Imagem de tela grande" class="lg-img">
+        <img src="./assets/image-download-sm.png" alt="Imagem de tela menor" class="sm-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <section class="s-modal">
+    <div class="overlay"></div>
+    <div class="s-modal_content">
+      <button class="close-modal js-close">
+        <img src="./assets/close.svg" alt="Ícone de fechar modal">
+      </button>
+      <img src="./assets/battlenet-logo.svg" alt="Logo Battlenet" class="logo">
+      <form action="">
+        <div class="form-group">
+          <input type="text" name="email" id="email" placeholder="E-mail ou telefone">
+        </div>
+        <div class="form-group">
+          <input type="password" name="senha" id="senha" placeholder="Senha">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Conectar-se</button>
+        </div>
+      </form>
+      <div class="s-modal_txt">
+        <span>ou conecte-se com</span>
+        <div class="social-media">
+          <button class="social-media-mask">
+            <img src="./assets/google.svg" alt="Gmail logo">
+          </button>
+          <button class="social-media-mask">
+            <img src="./assets/apple.svg" alt="Apple logo">
+          </button>
+          <button class="social-media-mask">
+            <img src="./assets/facebook.svg" alt="Facebook logo">
+          </button>
+        </div>
+        <p><a href="#">Crie uma conta</a> Battle.net de graça</p>
+        <a href="#">Não consegue logar?</a>
       </div>
     </div>
   </section>
