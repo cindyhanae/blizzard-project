@@ -61,6 +61,46 @@ header{
     align-items: center;
     gap: 1.6rem;
   }
+
+  .menu-hamburger{
+    display: none;
+  }
+
+  @media(max-width: 991px){
+    .container{
+      padding: 0 45px;
+    }
+
+    nav.header-menu{
+      display: none;
+    }
+
+    .header-right{
+      display: flex;
+      align-items: center;
+
+      .menu-hamburger{
+        display: block;
+        margin-left: 8.9rem;
+      }
+    }
+  }
+
+  @media(max-width: 650px){
+    height: 8rem;
+    
+    .container{
+      padding: 0 2.4rem;
+    }
+
+    .logo{
+      max-width: 6.9rem;
+    }
+
+    .header-btns{
+      display: none;
+    }
+  }
 }
 
 //  ********* DROPDOWN ********

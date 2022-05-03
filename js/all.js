@@ -4,7 +4,15 @@ var navSlider = new Swiper(".nav-slider", {
   slidesPerView: 5,
   direction: "vertical",
   spaceBetween: 20,
-  watchSlidesProgress: true
+  watchSlidesProgress: true,
+  breakpoints: {
+    320: {
+      direction: 'horizontal'
+    },
+    1025: {
+      direction: 'vertical'
+    }
+  }
 });
 var slideHero = new Swiper(".slider-hero", {
   effect: "fade",

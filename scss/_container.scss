@@ -5,6 +5,11 @@
   margin: 0 auto;
   
   @media(max-width: 1440px){
-    max-width: 124.6rem;
+    max-width: 130.6rem;
+    padding: 0 4.5rem;
+  }
+
+  @media(max-width: 640px){
+    padding: 0 2.4rem;
   }
 }
