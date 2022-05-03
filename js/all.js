@@ -43,17 +43,24 @@ closeModal.addEventListener('click', function () {
   document.documentElement.classList.remove('show-modal');
 }); // ========== DROPDOWN ============
 
-var btnGames = document.querySelector('.js-games-dropdown');
-var btnSports = document.querySelector('.js-sports-dropdown');
-var gamesDropdown = document.querySelector('.menu');
-var sportsDropdown = document.querySelector('.menu.e-sports');
-btnGames.addEventListener('click', function (event) {
-  event.preventDefault();
-  gamesDropdown.classList.add('active');
-  sportsDropdown.classList.remove('active');
-});
-btnSports.addEventListener('click', function (event) {
-  event.preventDefault();
-  sportsDropdown.classList.add('active');
-  gamesDropdown.classList.remove('active');
+var btnMenu = document.querySelectorAll('.js-btn-menu');
+var menuDropdown = document.querySelectorAll('.js-menu');
+btnMenu.forEach(function (btn, index) {
+  btn.addEventListener('click', function (event) {
+    event.preventDefault();
+    menuDropdown.forEach(function (itemMenu) {
+      itemMenu.classList.remove('active');
+      itemMenu.addEventListener('mouseleave', function () {
+        itemMenu.classList.remove('active');
+        btnMenu.forEach(function (itemBtn) {
+          itemBtn.classList.remove('active');
+        });
+      });
+    });
+    btnMenu.forEach(function (itemBtn) {
+      itemBtn.classList.remove('active');
+    });
+    btn.classList.add('active');
+    menuDropdown[index].classList.add('active');
+  });
 });

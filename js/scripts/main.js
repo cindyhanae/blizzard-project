@@ -55,21 +55,30 @@ closeModal.addEventListener('click', () => {
 
 
 // ========== DROPDOWN ============
-const btnGames = document.querySelector('.js-games-dropdown')
-const btnSports = document.querySelector('.js-sports-dropdown')
-const gamesDropdown = document.querySelector('.menu')
-const sportsDropdown = document.querySelector('.menu.e-sports')
+const btnMenu = document.querySelectorAll('.js-btn-menu')
+const menuDropdown = document.querySelectorAll('.js-menu')
 
-btnGames.addEventListener('click', (event) => {
-  event.preventDefault()
-  gamesDropdown.classList.add('active')
-  sportsDropdown.classList.remove('active')
+btnMenu.forEach((btn, index) => {
 
-})
+  btn.addEventListener('click', (event) => {
+    event.preventDefault()
 
-btnSports.addEventListener('click', (event) => {
-  event.preventDefault()
-  sportsDropdown.classList.add('active')
-  gamesDropdown.classList.remove('active')
+    menuDropdown.forEach(itemMenu => {
+      itemMenu.classList.remove('active')
+      itemMenu.addEventListener('mouseleave', () => {
+        itemMenu.classList.remove('active')
+        
+        btnMenu.forEach(itemBtn => {
+          itemBtn.classList.remove('active')
+        });
+      })
+    })
 
+    btnMenu.forEach(itemBtn => {
+      itemBtn.classList.remove('active')
+    });
+
+    btn.classList.add('active')
+    menuDropdown[index].classList.add('active')
+  })
 })
