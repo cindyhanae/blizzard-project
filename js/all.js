@@ -41,4 +41,19 @@ btnShowModal.addEventListener('click', function (event) {
 });
 closeModal.addEventListener('click', function () {
   document.documentElement.classList.remove('show-modal');
+}); // ========== DROPDOWN ============
+
+var btnGames = document.querySelector('.js-games-dropdown');
+var btnSports = document.querySelector('.js-sports-dropdown');
+var gamesDropdown = document.querySelector('.menu');
+var sportsDropdown = document.querySelector('.menu.e-sports');
+btnGames.addEventListener('click', function (event) {
+  event.preventDefault();
+  gamesDropdown.classList.add('active');
+  sportsDropdown.classList.remove('active');
+});
+btnSports.addEventListener('click', function (event) {
+  event.preventDefault();
+  sportsDropdown.classList.add('active');
+  gamesDropdown.classList.remove('active');
 });

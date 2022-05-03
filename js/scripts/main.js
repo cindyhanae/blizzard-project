@@ -52,3 +52,24 @@ btnShowModal.addEventListener('click', (event) => {
 closeModal.addEventListener('click', () => {
   document.documentElement.classList.remove('show-modal')
 })
+
+
+// ========== DROPDOWN ============
+const btnGames = document.querySelector('.js-games-dropdown')
+const btnSports = document.querySelector('.js-sports-dropdown')
+const gamesDropdown = document.querySelector('.menu')
+const sportsDropdown = document.querySelector('.menu.e-sports')
+
+btnGames.addEventListener('click', (event) => {
+  event.preventDefault()
+  gamesDropdown.classList.add('active')
+  sportsDropdown.classList.remove('active')
+
+})
+
+btnSports.addEventListener('click', (event) => {
+  event.preventDefault()
+  sportsDropdown.classList.add('active')
+  gamesDropdown.classList.remove('active')
+
+})
