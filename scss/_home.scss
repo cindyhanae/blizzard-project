@@ -397,6 +397,12 @@
   .s-games_top_right{
     max-width: 42.6rem;
   }
+
+  .s-games_bottom{
+    .tab-pane-games.active{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 @media(max-width: 750px){
@@ -415,6 +421,12 @@
       span{
         font-size: 1.4rem;
       }
+    }
+  }
+
+  .s-games_bottom{
+    .tab-pane-games.active{
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
