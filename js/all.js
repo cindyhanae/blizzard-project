@@ -14,6 +14,7 @@ var navSlider = new Swiper(".nav-slider", {
     }
   }
 });
+var progressSlide = document.querySelector('.js-progress');
 var slideHero = new Swiper(".slider-hero", {
   effect: "fade",
   thumbs: {
@@ -22,6 +23,23 @@ var slideHero = new Swiper(".slider-hero", {
   autoplay: {
     delay: 5000,
     disableOnInteraction: false
+  },
+  // pega alguns eventos que tem dentro do swiper slide
+  on: {
+    init: function init() {
+      progressSlide.classList.remove('animate');
+      progressSlide.classList.remove('active');
+      progressSlide.classList.add('animate');
+      progressSlide.classList.add('active');
+    },
+    slideChangeTransitionStart: function slideChangeTransitionStart() {
+      progressSlide.classList.remove('animate');
+      progressSlide.classList.remove('active');
+      progressSlide.classList.add('active');
+    },
+    slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+      progressSlide.classList.add('animate');
+    }
   }
 }); // ======= GAMES =======
 
