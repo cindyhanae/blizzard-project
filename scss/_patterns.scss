@@ -70,5 +70,27 @@
       line-height: 2.1rem;
     }
   }
+
+  @media(max-width: 1200px){
+    .game-card_img{
+      height: 34.3rem;
+    }
+  }
+
+  @media(max-width: 991px){
+    .game-card_img{
+      height: 30.3rem;
+    }
+  }
+
+  @media(max-width: 560px){
+    .game-card_img{
+      margin-bottom: 0;
+    }
+
+    .game-card-info{
+      display: none;
+    }
+  }
 }
 

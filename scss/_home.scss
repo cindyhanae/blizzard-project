@@ -270,12 +270,6 @@
       }
     }
   }
-
-  .nav-slider{
-    .swiper-wrapper{
-
-    }
-  }
 }
 
 // ******* GAMES SECTION *************
@@ -406,6 +400,11 @@
 }
 
 @media(max-width: 750px){
+  .s-games{
+    margin-top: 5.7rem;
+    padding-bottom: 6.9rem;
+  }
+
   .s-games_top_left{
     h2{
       font-size: 2.8rem;
@@ -425,8 +424,21 @@
   }
 
   .s-games_bottom{
+    margin-top: 5.7rem;
     .tab-pane-games.active{
       grid-template-columns: 1fr 1fr;
+      grid-gap: 2.4rem 1.6rem;
+    }
+  }
+
+  .card-all-games{
+    height: 30.4rem;
+    span{
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+      img{
+        display: none;
+      }
     }
   }
 }
