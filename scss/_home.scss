@@ -283,6 +283,7 @@
   margin-top: 8.5rem;
   padding-bottom: 10.7rem;
   .s-games_top{
+    width: 100%;
     @include flex(row, flex-end, space-between);
   }
 }
@@ -290,6 +291,7 @@
 .s-games_top_left{
   width: 100%;
   max-width: 39.9rem;
+  margin-right: 9.8rem;
   @include flex(row, flex-start, space-between);
 
   span{
@@ -316,12 +318,14 @@
   max-width: 75.2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   ul{
     display: flex;
     gap: 2.4rem;
     width: 100%;
     max-width: 16rem;
+    margin-right: 9rem;
 
     li{
       a{
@@ -339,11 +343,15 @@
   }
   .btn-all-games{
     display: flex;
-    gap: 1rem;
-    color: $primary-default;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 2.4rem;
+    span{
+      color: $primary-default;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 2.4rem;
+      margin-left: 1rem;
+      display: inline-block;
+      width: 14.8rem;
+    }
   }
 }
 
@@ -376,6 +384,40 @@
   }
 }
 
+@media(max-width: 1024px){
+  .s-games_top_left{
+    max-width: 17.5rem;
+    margin-right: 2rem;
+
+    span{
+      display: none;
+    }
+  }
+
+  .s-games_top_right{
+    max-width: 42.6rem;
+  }
+}
+
+@media(max-width: 750px){
+  .s-games_top_left{
+    h2{
+      font-size: 2.8rem;
+    }
+  }
+
+  .s-games_top_right{
+    ul{
+      display: none;
+    }
+    .btn-all-games{
+      margin-left: auto;
+      span{
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
 
 // ******** DOWNLOADS SECTION ********
 .s-download{
