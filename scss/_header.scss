@@ -239,6 +239,33 @@ header{
   }
 }
 
+@media(max-width: 650px){
+  .menu-area{
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 1rem;
+
+    .container{
+      ul{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem 0rem;
+      }
+    }
+  }
+
+  .menu-rodape{
+    display: none;
+  }
+
+  .menu.e-sports{
+    .menu-area{
+      ul{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
 // ******** MENU MOBILE **********
 .mobile{
   background-color: $neutral-100;
