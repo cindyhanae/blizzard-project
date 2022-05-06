@@ -89,12 +89,12 @@ const btnMenu = document.querySelectorAll('.js-btn-menu')
 const menuDropdown = document.querySelectorAll('.js-menu')
 
 btnMenu.forEach((btn, index) => {
-
   btn.addEventListener('click', (event) => {
     event.preventDefault()
 
     menuDropdown.forEach(itemMenu => {
       itemMenu.classList.remove('active')
+
       itemMenu.addEventListener('mouseleave', () => {
         itemMenu.classList.remove('active')
         
@@ -110,5 +110,34 @@ btnMenu.forEach((btn, index) => {
 
     btn.classList.add('active')
     menuDropdown[index].classList.add('active')
+  })
+})
+
+// ======== MENU MOBILE ======
+const btnHamburger = document.querySelector('.js-hamburger')
+const menuMobile = document.querySelector('.js-mobile')
+const btnLinkMobile = document.querySelectorAll('.js-link-mobile')
+
+btnHamburger.addEventListener('click', (event) => {
+  event.preventDefault()
+  menuMobile.classList.toggle('active')
+  menuDropdown.forEach((item) => {
+    item.classList.remove('active')
+  })
+})
+
+btnLinkMobile.forEach((link, index) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault()
+    menuMobile.classList.remove('active')
+    menuDropdown[index].classList.add('active')
+    
+  })
+})
+
+window.addEventListener('scroll', () => {
+  menuMobile.classList.remove('active')
+  menuDropdown.forEach((item) => {
+    item.classList.remove('active')
   })
 })

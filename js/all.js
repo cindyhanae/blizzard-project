@@ -89,4 +89,28 @@ btnMenu.forEach(function (btn, index) {
     btn.classList.add('active');
     menuDropdown[index].classList.add('active');
   });
+}); // ======== MENU MOBILE ======
+
+var btnHamburger = document.querySelector('.js-hamburger');
+var menuMobile = document.querySelector('.js-mobile');
+var btnLinkMobile = document.querySelectorAll('.js-link-mobile');
+btnHamburger.addEventListener('click', function (event) {
+  event.preventDefault();
+  menuMobile.classList.toggle('active');
+  menuDropdown.forEach(function (item) {
+    item.classList.remove('active');
+  });
+});
+btnLinkMobile.forEach(function (link, index) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    menuMobile.classList.remove('active');
+    menuDropdown[index].classList.add('active');
+  });
+});
+window.addEventListener('scroll', function () {
+  menuMobile.classList.remove('active');
+  menuDropdown.forEach(function (item) {
+    item.classList.remove('active');
+  });
 });

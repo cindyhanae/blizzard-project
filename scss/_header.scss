@@ -238,3 +238,30 @@ header{
     }
   }
 }
+
+// ******** MENU MOBILE **********
+.mobile{
+  background-color: $neutral-100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-top: 9.6rem;
+  text-align: center;
+  transform: translateY(-50px);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  
+  li{
+    margin-bottom: 3rem;
+  }
+
+  &.active{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+  }
+}
