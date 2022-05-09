@@ -785,4 +785,18 @@
   right: 2.4rem;
 }
 
+@media(max-width: 650px){
+  .overlay{
+    display: none;
+  }
+
+  .s-modal_content{
+    height: 100vh;
+    transform: translateY(0px);
+    background-size: cover;
+    padding: 0 1.5rem;
+  }
+}
+
+
 

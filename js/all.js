@@ -59,11 +59,13 @@ allGamesFilter.forEach(function (filter, index) {
   });
 }); // ========= MODAL ==========
 
-var btnShowModal = document.querySelector('.js-show-modal');
+var btnShowModal = document.querySelectorAll('.js-show-modal');
 var closeModal = document.querySelector('.js-close');
-btnShowModal.addEventListener('click', function (event) {
-  event.preventDefault();
-  document.documentElement.classList.add('show-modal');
+btnShowModal.forEach(function (item) {
+  item.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.documentElement.classList.add('show-modal');
+  });
 });
 closeModal.addEventListener('click', function () {
   document.documentElement.classList.remove('show-modal');
